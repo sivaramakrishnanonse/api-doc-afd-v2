@@ -1,0 +1,1592 @@
+{
+	"openapi": "3.0.0",
+	"paths": {
+		"/createModel": {
+			"post": {
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ExecutionRequest_createModel"
+							}
+						}
+					},
+					"description": "Execution request"
+				},
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ExecutionResults_createModel"
+								}
+							}
+						},
+						"description": "Execution results"
+					}
+				},
+				"parameters": [
+					{
+						"in": "query",
+						"name": "api-version",
+						"required": true,
+						"schema": {
+							"enum": [
+								"2.0"
+							],
+							"type": "string",
+							"default": "2.0"
+						},
+						"description": "The API version to use"
+					},
+					{
+						"in": "query",
+						"name": "format",
+						"required": false,
+						"schema": {
+							"enum": [
+								"swagger"
+							],
+							"type": "string",
+							"default": "swagger"
+						},
+						"description": "Specify if the format of the input to the web service should be swagger or not"
+					},
+					{
+						"in": "query",
+						"name": "detailed",
+						"required": false,
+						"schema": {
+							"enum": [
+								true
+							],
+							"type": "string"
+						},
+						"description": "The format of the input to the web service"
+					}
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"operationId": "createModel_execute",
+				"summary": "Create model",
+				"description": "The create model web service creates and stores an advanced fault detection model."
+			}
+		},
+		"/finalizeModel": {
+			"post": {
+				"summary": "Finalize model",
+				"parameters": [
+					{
+						"schema": {
+							"enum": [
+								"2.0"
+							],
+							"type": "string",
+							"default": "2.0"
+						},
+						"name": "api-version",
+						"description": "The API version to use",
+						"in": "query",
+						"required": true
+					},
+					{
+						"schema": {
+							"enum": [
+								"swagger"
+							],
+							"type": "string",
+							"default": "swagger"
+						},
+						"name": "format",
+						"description": "Specify if the format of the input to the web service should be swagger or not",
+						"in": "query",
+						"required": false
+					},
+					{
+						"schema": {
+							"enum": [
+								true
+							],
+							"type": "string"
+						},
+						"name": "detailed",
+						"description": "The format of the input to the web service",
+						"in": "query",
+						"required": false
+					}
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"operationId": "finalizeModel_execute",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ExecutionResults_finalizeModel"
+								}
+							}
+						},
+						"description": "Execution results"
+					}
+				},
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ExecutionRequest_finalizeModel"
+							}
+						}
+					},
+					"description": "Execution request"
+				},
+				"description": "The finalize model webservice returns the created model with the threshold obtained from the provided false positive ratio."
+			}
+		},
+		"/applyModel": {
+			"post": {
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ExecutionRequest_applyModel"
+							}
+						}
+					},
+					"description": "Execution request"
+				},
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ExecutionResults_applyModel"
+								}
+							}
+						},
+						"description": "Execution results"
+					}
+				},
+				"parameters": [
+					{
+						"in": "query",
+						"name": "api-version",
+						"required": true,
+						"schema": {
+							"enum": [
+								"2.0"
+							],
+							"type": "string",
+							"default": "2.0"
+						},
+						"description": "The API version to use"
+					},
+					{
+						"in": "query",
+						"name": "format",
+						"required": false,
+						"schema": {
+							"enum": [
+								"swagger"
+							],
+							"type": "string",
+							"default": "swagger"
+						},
+						"description": "Specify if the format of the input to the web service should be swagger or not"
+					},
+					{
+						"in": "query",
+						"name": "detailed",
+						"required": false,
+						"schema": {
+							"enum": [
+								true
+							],
+							"type": "string"
+						},
+						"description": "The format of the input to the web service"
+					}
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"operationId": "applyModel_execute",
+				"summary": "Apply model",
+				"description": "The apply model web service applies the model over test data containing the target variable, and uses the result as a reference to detect anomalies in the input signal."
+			}
+		},
+		"/getModelInformation": {
+			"post": {
+				"summary": "Get Model Information",
+				"parameters": [
+					{
+						"schema": {
+							"enum": [
+								"2.0"
+							],
+							"type": "string",
+							"default": "2.0"
+						},
+						"name": "api-version",
+						"description": "The API version to use",
+						"in": "query",
+						"required": true
+					},
+					{
+						"schema": {
+							"enum": [
+								"swagger"
+							],
+							"type": "string",
+							"default": "swagger"
+						},
+						"name": "format",
+						"description": "Specify if the format of the input to the web service should be swagger or not",
+						"in": "query",
+						"required": false
+					},
+					{
+						"schema": {
+							"enum": [
+								true
+							],
+							"type": "string"
+						},
+						"name": "detailed",
+						"description": "The format of the input to the web service",
+						"in": "query",
+						"required": false
+					}
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"operationId": "getModelInformation_execute",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ExecutionResults_getModelInformation"
+								}
+							}
+						},
+						"description": "Execution results"
+					}
+				},
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ExecutionRequest_getModelInformation"
+							}
+						}
+					},
+					"description": "Execution request"
+				},
+				"description": "The get model information web service returns the parameters of the model and information related to the training set."
+			}
+		}
+	},
+  "servers": [
+	{
+      "url": "https://se-exchange-uat-sandbox.apigee.net/analytics-advanced-fault-detection",
+      "description": "Sandbox"
+    },
+    {
+      "url": "https://se-exchange-uat-uat.apigee.net/analytics-advanced-fault-detection",
+      "description": "Production"
+    }
+  ],
+	"components": {
+		"securitySchemes": {
+			"api_key": {
+				"name": "Authorization",
+				"in": "header",
+				"type": "apiKey"
+			}
+		},
+		"schemas": {
+			"modelIDItem_createModel": {
+				"required": [
+					"modelID"
+				],
+				"properties": {
+					"modelID": {
+						"type": "string",
+						"format": "script"
+					}
+				}
+			},
+			"creationConfigurationItem_createModel": {
+				"required": [
+					"Field",
+					"Value"
+				],
+				"properties": {
+					"Value": {
+						"type": "string",
+						"format": "script"
+					},
+					"Field": {
+						"type": "string",
+						"format": "script"
+					}
+				}
+			},
+			"ExecutionInputs_createModel": {
+				"type": "object",
+				"title": "Execution inputs definition",
+				"properties": {
+					"trainDataset": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/trainDatasetItem_createModel"
+						}
+					}
+				}
+			},
+			"ExecutionOutputs_createModel": {
+				"type": "object",
+				"title": "Execution outputs definition",
+				"properties": {
+					"modelPerformance": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/modelPerformanceItem_createModel"
+						}
+					},
+					"creationConfiguration": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/creationConfigurationItem_createModel"
+						}
+					},
+					"modelID": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/modelIDItem_createModel"
+						}
+					},
+					"bestParameter": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/bestParameterItem_createModel"
+						}
+					}
+				}
+			},
+			"trainDatasetItem_createModel": {
+				"required": [
+					"datetime",
+					"attr01",
+					"attr02",
+					"attr03",
+					"attr04",
+					"attr05",
+					"attr06",
+					"attr07",
+					"attr08",
+					"attr09",
+					"attr10",
+					"attr11",
+					"attr12",
+					"attr13",
+					"attr14",
+					"attr15"
+				],
+				"properties": {
+					"datetime": {
+						"type": "string",
+						"format": "Date-time",
+						"description": "Timestamp for the measure in the current row. Must be given in ISO 8601 format.",
+						"example": "2015-10-08T12:30:00.000+0200"
+					},
+					"attr01": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 50.4
+					},
+					"attr02": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 25.93
+					},
+					"attr03": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 25.93
+					},
+					"attr04": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 47.4
+					},
+					"attr05": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 50.4
+					},
+					"attr06": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 25.93
+					},
+					"attr07": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 25.93
+					},
+					"attr08": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 47.8
+					},
+					"attr09": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 50.4
+					},
+					"attr10": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 25.93
+					},
+					"attr11": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 25.93
+					},
+					"attr12": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 50.4
+					},
+					"attr13": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 50.4
+					},
+					"attr14": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 50.4
+					},
+					"attr15": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 50.4
+					}
+				}
+			},
+			"ExecutionRequest_createModel": {
+				"example": {
+					"Inputs": {
+						"trainDataset": [
+							{
+								"datetime": "2017-03-06T11:41:00+00:00",
+								"attr01": -614.8095238,
+								"attr02": 10.5914,
+								"attr03": 96.4293,
+								"attr04": 43,
+								"attr05": 353.9090909,
+								"attr06": 90.1667,
+								"attr07": -6.715753045,
+								"attr08": -2299.419917,
+								"attr09": -3.529907692,
+								"attr10": -7.197609091,
+								"attr11": -0.011258084,
+								"attr12": -1.284969555,
+								"attr13": 0.0001,
+								"attr14": 0.0031,
+								"attr15": 0.0011
+							},
+							{
+								"datetime": "2017-03-06T11:42:00+00:00",
+								"attr01": 117.125,
+								"attr02": 10.5925,
+								"attr03": 96.4324,
+								"attr04": 43.42857143,
+								"attr05": -241.14814810000002,
+								"attr06": 90.1668,
+								"attr07": -1.3851032140000002,
+								"attr08": 5280.686663,
+								"attr09": 1.4927301819999999,
+								"attr10": -81.8283125,
+								"attr11": -0.068155633,
+								"attr12": -27.99625097,
+								"attr13": 0.0001,
+								"attr14": 0.0036,
+								"attr15": 0.0013
+							},
+							{
+								"datetime": "2017-03-06T11:43:00+00:00",
+								"attr01": 853.6923077,
+								"attr02": 10.5938,
+								"attr03": 96.436,
+								"attr04": 44.33333333,
+								"attr05": -351.07142860000007,
+								"attr06": 90.1669,
+								"attr07": -3.934310355,
+								"attr08": 3113.151335,
+								"attr09": -3.6556275310000005,
+								"attr10": -6.069824186,
+								"attr11": -0.069161992,
+								"attr12": -7.326802572999999,
+								"attr13": 8.47e-7,
+								"attr14": 0.0000305,
+								"attr15": 0.000011
+							},
+							{
+								"datetime": "2017-03-06T11:44:00+00:00",
+								"attr01": -1,
+								"attr02": 10.5938,
+								"attr03": 96.436,
+								"attr04": 45,
+								"attr05": 1.771428571,
+								"attr06": 90.1669,
+								"attr07": 4.2958184,
+								"attr08": 4.578164794,
+								"attr09": 4.295815172,
+								"attr10": 0.0021596939999999999,
+								"attr11": -0.00000615,
+								"attr12": 0.001725961,
+								"attr13": 8.47e-7,
+								"attr14": 0.0000305,
+								"attr15": 0.000011
+							},
+							{
+								"datetime": "2017-03-06T11:45:00+00:00",
+								"attr01": -1,
+								"attr02": 10.5938,
+								"attr03": 96.436,
+								"attr04": 45.5,
+								"attr05": 2.272727273,
+								"attr06": 90.1669,
+								"attr07": 4.295804839,
+								"attr08": -0.520461765,
+								"attr09": 4.295804286,
+								"attr10": -0.00059217,
+								"attr11": 0.00000264,
+								"attr12": -0.004458736,
+								"attr13": 8.47e-7,
+								"attr14": 0.0000305,
+								"attr15": 0.000011
+							},
+							{
+								"datetime": "2017-03-06T11:46:00+00:00",
+								"attr01": -1,
+								"attr02": 10.5938,
+								"attr03": 96.436,
+								"attr04": 47,
+								"attr05": 7.074074073999999,
+								"attr06": 90.1669,
+								"attr07": 4.2957944,
+								"attr08": -9.728166667,
+								"attr09": 4.2957944,
+								"attr10": -0.0042831679999999999,
+								"attr11": 0.00000382,
+								"attr12": -0.0042803879999999999,
+								"attr13": 8.47e-7,
+								"attr14": 0.0000305,
+								"attr15": 0.000011
+							},
+							{
+								"datetime": "2017-03-06T11:47:00+00:00",
+								"attr01": -1,
+								"attr02": 10.5938,
+								"attr03": 96.436,
+								"attr04": 47,
+								"attr05": 6.295454545,
+								"attr06": 90.1669,
+								"attr07": 4.29579587,
+								"attr08": -2.230819421,
+								"attr09": 4.295793243,
+								"attr10": -0.000540455,
+								"attr11": 0.00000279,
+								"attr12": -0.0023779929999999999,
+								"attr13": 8.47e-7,
+								"attr14": 0.0000305,
+								"attr15": 0.000011
+							},
+							{
+								"datetime": "2017-03-06T11:48:00+00:00",
+								"attr01": 1.428571429,
+								"attr02": 10.5938,
+								"attr03": 96.436,
+								"attr04": 47,
+								"attr05": 3.6363636360000006,
+								"attr06": 90.1669,
+								"attr07": 4.295791081,
+								"attr08": 0.45835,
+								"attr09": 4.295791212,
+								"attr10": 0.000631989,
+								"attr11": -0.00000613,
+								"attr12": -0.008322976999999999,
+								"attr13": 8.47e-7,
+								"attr14": 0.0000305,
+								"attr15": 0.000011
+							},
+							{
+								"datetime": "2017-03-06T11:49:00+00:00",
+								"attr01": 6,
+								"attr02": 10.5938,
+								"attr03": 96.436,
+								"attr04": 48,
+								"attr05": 4.8709677419999999,
+								"attr06": 90.1669,
+								"attr07": 4.295795417,
+								"attr08": 12.71535337,
+								"attr09": 4.295796667,
+								"attr10": 0.011379064,
+								"attr11": -0.0000156,
+								"attr12": 0.014777523,
+								"attr13": 8.47e-7,
+								"attr14": 0.0000305,
+								"attr15": 0.000011
+							},
+							{
+								"datetime": "2017-03-06T11:50:00+00:00",
+								"attr01": 6,
+								"attr02": 10.5938,
+								"attr03": 96.436,
+								"attr04": 48,
+								"attr05": 7.65,
+								"attr06": 90.1669,
+								"attr07": 4.295781935,
+								"attr08": -2.485358888,
+								"attr09": 4.295782759,
+								"attr10": -0.004950281,
+								"attr11": 0.0000051,
+								"attr12": -0.00378317,
+								"attr13": 8.47e-7,
+								"attr14": 0.0000305,
+								"attr15": 0.000011
+							}
+						]
+					},
+					"GlobalParameters": {
+						"slidingWindowsSize": "1",
+						"falsePositiveRatio": "0.01",
+						"detectionAlgorithm": "IMS",
+						"searchSpaceScale": "linespace",
+						"searchSpaceNValues": "5",
+						"performanceCriterionType": "partial_AUC",
+						"performanceCriterionValue": "0.01",
+						"cvSampling": "bootstrapping",
+						"cvTrainingFrac": "0.9",
+						"nSimulated": "10",
+						"minWeight": "0",
+						"maxWeight": "2",
+						"variablesName": "attr13,attr14,attr15",
+						"datetimeName": "datetime"
+					}
+				},
+				"title": "Execution request",
+				"properties": {
+					"Inputs": {
+						"$ref": "#/components/schemas/ExecutionInputs_createModel"
+					},
+					"GlobalParameters": {
+						"$ref": "#/components/schemas/GlobalParameters_createModel"
+					}
+				}
+			},
+			"GlobalParameters_createModel": {
+				"type": "object",
+				"title": "Global parameters definition",
+				"properties": {
+					"performanceCriterionValue": {
+						"type": "number",
+						"default": 0.01,
+						"format": "float",
+						"description": " Value of the false positive rate to be used for partial_AUC"
+					},
+					"performanceCriterionType": {
+						"type": "string",
+						"default": "partial_UAC",
+						"format": "script",
+						"description": "Method to compute the performance of a model. Currently the only option is partial area under the curve."
+					},
+					"variablesName": {
+						"type": "string",
+						"default": "attr13,attr14,attr15",
+						"format": "script",
+						"description": "List of comma-separated variables that are used to create the DBFD model if overrideVariableSelection is set to True."
+					},
+					"minWeight": {
+						"type": "number",
+						"default": 1000,
+						"format": "float",
+						"description": "Minimum weight for the pseudo-convex combination performed with SMOTE."
+					},
+					"slidingWindowsSize": {
+						"type": "integer",
+						"default": 64,
+						"description": "Is a positive value to consider the dynamic aspect of signal. The maximum SW value must not exceed the ½ of the learning data length."
+					},
+					"cvTrainingFrac": {
+						"type": "number",
+						"default": 0.9,
+						"format": "float",
+						"description": " ratio (length training set) / (length input set)"
+					},
+					"anomalousDataGenerationMethod": {
+						"type": "string",
+						"default": "SMOTE",
+						"format": "script",
+						"description": "method use to generate anomalous data if use_autotuning is True."
+					},
+					"nSimulated": {
+						"type": "integer",
+						"default": 1000,
+						"description": "Number of abnormal data points to be generated."
+					},
+					"maxWeight": {
+						"type": "number",
+						"default": 2,
+						"format": "float",
+						"description": "Maximum weight to be considered in the pseudo-convex combination performed in SMOTE."
+					},
+					"searchSpaceScale": {
+						"type": "string",
+						"default": "logarithmic",
+						"format": "script",
+						"description": "Refers to the interpolation method to create the search space. There are two possible methods: 1. 'linespace': All the ticks are evenly separated. 2. 'logarithmic': Space between ticks increases at logarithmic rate."
+					},
+					"detectionAlgorithm": {
+						"type": "string",
+						"default": "IMS",
+						"format": "script",
+						"description": " One-class anomaly detection algorithm. The client can choose among the following options: 1. 'IMS': Inductive Monitoring System, 2. 'kPCA': kernel Principal Component Analysis"
+					},
+					"searchSpaceNValues": {
+						"type": "integer",
+						"default": 50,
+						"format": "script",
+						"description": "t is length of the search space, i.e. number of ticks in the search space. These are the values to explore in the auto-tuning part."
+					},
+					"falsePositiveRatio": {
+						"type": "number",
+						"default": 0.05,
+						"format": "double",
+						"description": "Value between 0 and 1 that defines the false positive ratio used for the parameter estimation and according to the auto-tuning method (only for 2 class autotuning that needs cross-validation technique)."
+					},
+					"cvSampling": {
+						"type": "string",
+						"default": "bootstrapping",
+						"format": "script",
+						"description": "method to split the set in a testing set and a training set in the computation of the normal score. Currently there are two available options: 1.'bootstrapping': Bootstrapping randomly resamples the observations, and then performs the split between train and test data in order to obtain the normal score. 2. 'cv': This option stands for cross-validation, it splits the sample in different parts and then randomly shuffles these sub-sets selecting one of these as test set at the time, while the rest is merged and considered to be a training set."
+					}
+				}
+			},
+			"modelPerformanceItem_createModel": {
+				"required": [
+					"probabilityOfFalseAlarm",
+					"probabilityOfDetection"
+				],
+				"properties": {
+					"probabilityOfDetection": {
+						"type": "number",
+						"format": "double"
+					},
+					"probabilityOfFalseAlarm": {
+						"type": "number",
+						"format": "double"
+					}
+				}
+			},
+			"ExecutionResults_createModel": {
+				"title": "Execution Results",
+				"properties": {
+					"Results": {
+						"$ref": "#/components/schemas/ExecutionOutputs_createModel"
+					}
+				}
+			},
+			"bestParameterItem_createModel": {
+				"required": [
+					"best_param"
+				],
+				"properties": {
+					"best_param": {
+						"description": "Optimal parameter obtained from auto-tuning for the anomaly-detection algorithm.",
+						"type": "string",
+						"format": "script"
+					}
+				}
+			},
+			"modelIDItem1_finalizeModel": {
+				"properties": {
+					"modelID": {
+						"format": "script",
+						"type": "string"
+					}
+				},
+				"required": [
+					"modelID"
+				]
+			},
+			"ExecutionInputs_finalizeModel": {
+				"title": "Execution inputs definition",
+				"properties": {
+					"modelID": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/modelIDItem_finalizeModel"
+						}
+					}
+				},
+				"type": "object"
+			},
+			"ExecutionRequest_finalizeModel": {
+				"title": "Execution request",
+				"properties": {
+					"GlobalParameters": {
+						"$ref": "#/components/schemas/GlobalParameters_finalizeModel"
+					},
+					"Inputs": {
+						"$ref": "#/components/schemas/ExecutionInputs_finalizeModel"
+					}
+				},
+				"example": {
+					"GlobalParameters": {
+						"falsePositiveRatio": 0.01,
+						"verbosity": "WARNING"
+					},
+					"Inputs": {
+						"modelID": [
+							{
+								"modelID": ""
+							}
+						]
+					}
+				}
+			},
+			"modelPerformanceItem_finalizeModel": {
+				"properties": {
+					"probabilityOfFalseAlarm": {
+						"format": "double",
+						"type": "number"
+					},
+					"probabilityOfDetection": {
+						"format": "double",
+						"type": "number"
+					}
+				},
+				"required": [
+					"probabilityOfFalseAlarm",
+					"probabilityOfDetection"
+				]
+			},
+			"creationConfigurationItem_finalizeModel": {
+				"properties": {
+					"Field": {
+						"format": "script",
+						"type": "string"
+					},
+					"Value": {
+						"format": "script",
+						"type": "string"
+					}
+				},
+				"required": [
+					"Field",
+					"Value"
+				]
+			},
+			"GlobalParameters_finalizeModel": {
+				"title": "Global parameters definition",
+				"properties": {
+					"falsePositiveRatio": {
+						"format": "float",
+						"description": "Value between 0 and 1 that defines the false positive ratio used for the parameter estimation and according to the autotuning method (only for 2 class autotuning that needs cross-validation technique).",
+						"type": "number",
+						"default": 0.01
+					},
+					"verbosity": {
+						"format": "script",
+						"description": "verbosity",
+						"type": "string",
+						"default": "WARNING"
+					}
+				},
+				"type": "object"
+			},
+			"modelIDItem_finalizeModel": {
+				"properties": {
+					"modelID": {
+						"format": "script",
+						"type": "string"
+					}
+				},
+				"required": [
+					"modelID"
+				]
+			},
+			"ExecutionOutputs_finalizeModel": {
+				"title": "Execution outputs definition",
+				"properties": {
+					"modelID": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/modelIDItem1_finalizeModel"
+						}
+					},
+					"bestParam": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/bestParamItem_finalizeModel"
+						}
+					},
+					"creationConfiguration": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/creationConfigurationItem_finalizeModel"
+						}
+					},
+					"modelPerformance": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/modelPerformanceItem_finalizeModel"
+						}
+					}
+				},
+				"type": "object"
+			},
+			"bestParamItem_finalizeModel": {
+				"properties": {
+					"best_param": {
+						"format": "script",
+						"type": "string"
+					},
+					"threshold": {
+						"format": "double",
+						"type": "number"
+					}
+				},
+				"required": [
+					"best_param",
+					"threshold"
+				]
+			},
+			"ExecutionResults_finalizeModel": {
+				"title": "Execution Results",
+				"properties": {
+					"Results": {
+						"$ref": "#/components/schemas/ExecutionOutputs_finalizeModel"
+					}
+				}
+			},
+			"thresholdItem_applyModel": {
+				"required": [
+					"threshold"
+				],
+				"properties": {
+					"threshold": {
+						"description": "All the observations whose score lies above this threshold will be considered as anomalies by the component",
+						"type": "number",
+						"format": "double"
+					}
+				}
+			},
+			"testDatasetItem_applyModel": {
+				"required": [
+					"datetime",
+					"attr01",
+					"attr02",
+					"attr03",
+					"attr04",
+					"attr05",
+					"attr06",
+					"attr07",
+					"attr08",
+					"attr09",
+					"attr10",
+					"attr11",
+					"attr12",
+					"attr13",
+					"attr15"
+				],
+				"properties": {
+					"datetime": {
+						"type": "string",
+						"format": "Date-time",
+						"description": "Timestamp for the measure in the current row. Must be given in ISO 8601 format.",
+						"example": "2015-10-08T12:30:00.000+0200"
+					},
+					"attr01": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 50.4
+					},
+					"attr02": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 25.93
+					},
+					"attr03": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 25.93
+					},
+					"attr04": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 47.4
+					},
+					"attr05": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 50.4
+					},
+					"attr06": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 25.93
+					},
+					"attr07": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 25.93
+					},
+					"attr08": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 47.8
+					},
+					"attr09": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 50.4
+					},
+					"attr10": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 25.93
+					},
+					"attr11": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 25.93
+					},
+					"attr12": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 50.4
+					},
+					"attr13": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 50.4
+					},
+					"attr14": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 50.4
+					},
+					"attr15": {
+						"type": "number",
+						"format": "double",
+						"description": "Attribute or predictor.",
+						"example": 50.4
+					}
+				}
+			},
+			"modelIDItem_applyModel": {
+				"required": [
+					"modelID"
+				],
+				"properties": {
+					"modelID": {
+						"type": "string",
+						"format": "script"
+					}
+				}
+			},
+			"ExecutionResults_applyModel": {
+				"title": "Execution Results",
+				"properties": {
+					"Results": {
+						"$ref": "#/components/schemas/ExecutionOutputs_applyModel"
+					}
+				}
+			},
+			"ExecutionInputs_applyModel": {
+				"type": "object",
+				"title": "Execution inputs definition",
+				"properties": {
+					"testDataset": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/testDatasetItem_applyModel"
+						}
+					},
+					"modelID": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/modelIDItem_applyModel"
+						}
+					}
+				}
+			},
+			"ExecutionOutputs_applyModel": {
+				"type": "object",
+				"title": "Execution outputs definition",
+				"properties": {
+					"threshold": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/thresholdItem_applyModel"
+						}
+					},
+					"faultDetection": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/faultDetectionItem_applyModel"
+						}
+					}
+				}
+			},
+			"ExecutionRequest_applyModel": {
+				"example": {
+					"Inputs": {
+						"testDataset": [
+							{
+								"datetime": "2015-12-08T06:00:00+00:00",
+								"attr01": 50.4,
+								"attr02": 25.93,
+								"attr03": 25.93,
+								"attr04": 47,
+								"attr05": 50.4,
+								"attr06": 25.93,
+								"attr07": 25.93,
+								"attr08": 47,
+								"attr09": 50.4,
+								"attr10": 25.93,
+								"attr11": 25.93,
+								"attr12": 47,
+								"attr13": 50.4,
+								"attr14": 25.93,
+								"attr15": 25.93
+							},
+							{
+								"datetime": "2015-12-08T06:30:00+00:00",
+								"attr01": 40.96,
+								"attr02": "NaN",
+								"attr03": 12.1,
+								"attr04": 46,
+								"attr05": 40.96,
+								"attr06": "NaN",
+								"attr07": 12.1,
+								"attr08": 46,
+								"attr09": 40.96,
+								"attr10": "NaN",
+								"attr11": 12.1,
+								"attr12": 46,
+								"attr13": 40.96,
+								"attr14": 50,
+								"attr15": 12.1
+							},
+							{
+								"datetime": "2015-12-08T07:00:00+00:00",
+								"attr01": 43.55,
+								"attr02": 25.7,
+								"attr03": 25.7,
+								"attr04": 45,
+								"attr05": 43.55,
+								"attr06": 25.7,
+								"attr07": 25.7,
+								"attr08": 45,
+								"attr09": 43.55,
+								"attr10": 25.7,
+								"attr11": 25.7,
+								"attr12": 45,
+								"attr13": 43.55,
+								"attr14": 25.7,
+								"attr15": 25.7
+							},
+							{
+								"datetime": "2015-12-08T07:30:00+00:00",
+								"attr01": 50.4,
+								"attr02": "NaN",
+								"attr03": 11.1,
+								"attr04": 45,
+								"attr05": 50.4,
+								"attr06": "NaN",
+								"attr07": 11.1,
+								"attr08": 45,
+								"attr09": 50.4,
+								"attr10": "NaN",
+								"attr11": 11.1,
+								"attr12": 45,
+								"attr13": 50.4,
+								"attr14": 50,
+								"attr15": 11.1
+							},
+							{
+								"datetime": "2015-12-08T08:00:00+00:00",
+								"attr01": 53.29,
+								"attr02": 25.61,
+								"attr03": 25.61,
+								"attr04": 45,
+								"attr05": 53.29,
+								"attr06": 25.61,
+								"attr07": 25.61,
+								"attr08": 45,
+								"attr09": 53.29,
+								"attr10": 25.61,
+								"attr11": 25.61,
+								"attr12": 45,
+								"attr13": 53.29,
+								"attr14": 25.61,
+								"attr15": 25.61
+							},
+							{
+								"datetime": "2015-12-08T08:30:00+00:00",
+								"attr01": 67.23,
+								"attr02": "NaN",
+								"attr03": 67.23,
+								"attr04": 46,
+								"attr05": 67.23,
+								"attr06": "NaN",
+								"attr07": 67.23,
+								"attr08": 46,
+								"attr09": 67.23,
+								"attr10": "NaN",
+								"attr11": 67.23,
+								"attr12": 46,
+								"attr13": 67.23,
+								"attr14": 50,
+								"attr15": 67.23
+							},
+							{
+								"datetime": "2015-12-08T09:00:00+00:00",
+								"attr01": 84.63,
+								"attr02": 25.61,
+								"attr03": 25.61,
+								"attr04": 47,
+								"attr05": 84.63,
+								"attr06": 25.61,
+								"attr07": 25.61,
+								"attr08": 47,
+								"attr09": 84.63,
+								"attr10": 25.61,
+								"attr11": 25.61,
+								"attr12": 47,
+								"attr13": 84.63,
+								"attr14": 25.61,
+								"attr15": 25.61
+							},
+							{
+								"datetime": "2015-12-08T09:30:00+00:00",
+								"attr01": 92.16,
+								"attr02": "NaN",
+								"attr03": 15.2,
+								"attr04": 48,
+								"attr05": 92.16,
+								"attr06": "NaN",
+								"attr07": 15.2,
+								"attr08": 48,
+								"attr09": 92.16,
+								"attr10": "NaN",
+								"attr11": 15.2,
+								"attr12": 48,
+								"attr13": 92.16,
+								"attr14": 50,
+								"attr15": 15.2
+							},
+							{
+								"datetime": "2015-12-08T10:00:00+00:00",
+								"attr01": 67.23,
+								"attr02": 25.8,
+								"attr03": 25.8,
+								"attr04": 48,
+								"attr05": 67.23,
+								"attr06": 25.8,
+								"attr07": 25.8,
+								"attr08": 48,
+								"attr09": 67.23,
+								"attr10": 25.8,
+								"attr11": 25.8,
+								"attr12": 48,
+								"attr13": 67.23,
+								"attr14": 25.8,
+								"attr15": 25.8
+							},
+							{
+								"datetime": "2015-12-08T10:30:00+00:00",
+								"attr01": 121,
+								"attr02": "NaN",
+								"attr03": 15,
+								"attr04": 50,
+								"attr05": 121,
+								"attr06": "NaN",
+								"attr07": 15,
+								"attr08": 50,
+								"attr09": 121,
+								"attr10": "NaN",
+								"attr11": 15,
+								"attr12": 50,
+								"attr13": 121,
+								"attr14": 50,
+								"attr15": 15
+							}
+						],
+						"modelID": [
+							{
+								"modelID": ""
+							}
+						]
+					},
+					"GlobalParameters": {}
+				},
+				"title": "Execution request",
+				"properties": {
+					"Inputs": {
+						"$ref": "#/components/schemas/ExecutionInputs_applyModel"
+					},
+					"GlobalParameters": {
+						"$ref": "#/components/schemas/GlobalParameters_applyModel"
+					}
+				}
+			},
+			"GlobalParameters_applyModel": {
+				"type": "object",
+				"title": "Global parameters definition",
+				"properties": {}
+			},
+			"faultDetectionItem_applyModel": {
+				"required": [
+					"datetime",
+					"attr13",
+					"attr15"
+				],
+				"properties": {
+					"IS_ANOMALY_REDUCED": {
+						"description": "Remove non consecutive anomalies in a sliding windows size from IS_ANOMALY column.",
+						"type": "number",
+						"format": "double"
+					},
+					"SCORE": {
+						"description": "Score given by the algorithm to the current observation. The bigger the score the highest the chances of this observation to be detected as anomaly.",
+						"type": "number",
+						"format": "double"
+					},
+					"datetime": {
+						"description": "Name of the datetime column",
+						"type": "string",
+						"format": "script"
+					},
+					"IS_ANOMALY": {
+						"description": "It is the initial detection made by the detection algorithm. When its value is equal to 1 then the algorithm suggests that there is an anomaly in the current observation",
+						"type": "number",
+						"format": "double"
+					}
+				}
+			},
+			"modelInformationItem_getModelInformation": {
+				"properties": {
+					"best_param": {
+						"format": "script",
+						"type": "string"
+					}
+				},
+				"required": [
+					"best_param"
+				]
+			},
+			"abnormalDataItem_getModelInformation": {
+				"properties": {
+					"abnormal_score": {
+						"format": "double",
+						"type": "number"
+					}
+				},
+				"required": [
+					"abnormal_score"
+				]
+			},
+			"ExecutionInputs_getModelInformation": {
+				"title": "Execution inputs definition",
+				"properties": {
+					"modelID": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/modelIDItem_getModelInformation"
+						}
+					}
+				},
+				"type": "object"
+			},
+			"ExecutionRequest_getModelInformation": {
+				"title": "Execution request",
+				"properties": {
+					"GlobalParameters": {
+						"$ref": "#/components/schemas/GlobalParameters_getModelInformation"
+					},
+					"Inputs": {
+						"$ref": "#/components/schemas/ExecutionInputs_getModelInformation"
+					}
+				},
+				"example": {
+					"GlobalParameters": {},
+					"Inputs": {
+						"modelID": [
+							{
+								"modelID": ""
+							}
+						]
+					}
+				}
+			},
+			"modelIDItem_getModelInformation": {
+				"properties": {
+					"modelID": {
+						"format": "script",
+						"type": "string"
+					}
+				},
+				"required": [
+					"modelID"
+				]
+			},
+			"GlobalParameters_getModelInformation": {
+				"title": "Global parameters definition",
+				"properties": {},
+				"type": "object"
+			},
+			"modelPerformanceItem_getModelInformation": {
+				"properties": {
+					"probabilityOfFalseAlarm": {
+						"format": "double",
+						"type": "number"
+					},
+					"probabilityOfDetection": {
+						"format": "double",
+						"type": "number"
+					}
+				},
+				"required": [
+					"probabilityOfFalseAlarm",
+					"probabilityOfDetection"
+				]
+			},
+			"ExecutionOutputs_getModelInformation": {
+				"title": "Execution outputs definition",
+				"properties": {
+					"modelInformation": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/modelInformationItem_getModelInformation"
+						}
+					},
+					"creationConfiguration": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/creationConfigurationItem_getModelInformation"
+						}
+					},
+					"abnormalData": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/abnormalDataItem_getModelInformation"
+						}
+					},
+					"modelPerformance": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/modelPerformanceItem_getModelInformation"
+						}
+					},
+					"normalScore": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/normalScoreItem_getModelInformation"
+						}
+					}
+				},
+				"type": "object"
+			},
+			"creationConfigurationItem_getModelInformation": {
+				"properties": {
+					"Field": {
+						"format": "script",
+						"type": "string"
+					},
+					"Value": {
+						"format": "script",
+						"type": "string"
+					}
+				},
+				"required": [
+					"Field",
+					"Value"
+				]
+			},
+			"normalScoreItem_getModelInformation": {
+				"properties": {
+					"normal_score": {
+						"format": "double",
+						"type": "number"
+					}
+				},
+				"required": [
+					"normal_score"
+				]
+			},
+			"ExecutionResults_getModelInformation": {
+				"title": "Execution Results",
+				"properties": {
+					"Results": {
+						"$ref": "#/components/schemas/ExecutionOutputs_getModelInformation"
+					}
+				}
+			}
+		}
+	},
+	"info": {
+		"version": "1.2.0",
+		"title": "Advanced Fault Detection API",
+		"description": "../md_files/README.md"
+	}
+}
