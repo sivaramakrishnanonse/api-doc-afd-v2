@@ -298,7 +298,7 @@
 			}
 		}
 	},
-  "servers": [
+  "x-servers": [
 	{
       "url": "https://se-exchange-uat-sandbox.apigee.net/analytics-advanced-fault-detection",
       "description": "Sandbox"
@@ -1587,6 +1587,8 @@
 	"info": {
 		"version": "1.2.0",
 		"title": "Advanced Fault Detection API",
-		"description": "../md_files/README.md"
+		"description": {
+		 "ref": "../md_files/README.md"
+		}
 	}
 }
