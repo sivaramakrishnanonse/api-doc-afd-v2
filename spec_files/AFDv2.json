@@ -300,11 +300,11 @@
 	},
   "servers": [
 	{
-      "url": "https://se-exchange-uat-sandbox.apigee.net/analytics-advanced-fault-detection",
+      "url": "https://se-exchange-uat-sandbox.apigee.net/analytics-advanced-fault-detection-v2",
       "description": "Sandbox"
     },
     {
-      "url": "https://se-exchange-uat-uat.apigee.net/analytics-advanced-fault-detection",
+      "url": "https://se-exchange-uat-uat.apigee.net/analytics-advanced-fault-detection-v2",
       "description": "Production"
     }
   ],
