@@ -188,7 +188,3 @@ In your request please :
 	- give the request that generates the error
 	- copy paste any error message you received
 	- add some screen shot
-
-# Blogs
----
-# API Reference
